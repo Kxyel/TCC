@@ -1,0 +1,23 @@
+.ui-flex-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: stretch;
+}
+
+.ui-flex-row {
+    display: flex;
+    flex-direction: row;
+    flex: auto;
+}
+
+.ui-flex-column {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+.ui-flex {
+    flex: auto;
+}

@@ -1,0 +1,29 @@
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="isOpened">
+        <button mat-mini-fab color="warn" style="margin: 12px;" (click)="close()">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+
+        <mat-nav-list>
+            <mat-list-item>
+                <mat-icon mat-list-icon>home</mat-icon>
+                <span *ngIf="isOpened" class="menu-item">{{appSettings.lg.home}}</span>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon>person</mat-icon>
+                <span *ngIf="isOpened" class="menu-item">{{appSettings.lg.employee}}</span>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon>dashboard</mat-icon>
+                <span *ngIf="isOpened" class="menu-item">{{appSettings.lg.dashboard}}</span>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
