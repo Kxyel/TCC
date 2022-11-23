@@ -1,27 +1,40 @@
 <mat-sidenav-container autosize>
     <mat-sidenav #sidenav mode="side" opened="isOpened">
-        <button mat-mini-fab color="warn" style="margin: 12px;" (click)="close()">
+        <button mat-mini-fab color="warn" class="menu-button" (click)="close()">
             <mat-icon>chevron_right</mat-icon>
         </button>
-
+        
         <mat-nav-list>
-            <mat-list-item>
-                <mat-icon mat-list-icon>home</mat-icon>
-                <span *ngIf="isOpened" class="menu-item">{{appSettings.lg.home}}</span>
-            </mat-list-item>
+            <a mat-list-item class="menu-item" [routerLink]="['']" routerLinkActive="active">
+                <button mat-icon-button matListItemIcon>
+                    <mat-icon>home</mat-icon>
+                </button>
+                <span *ngIf="isOpened" matListItemLine>{{appSettings.lg.home}}</span>
+            </a>
 
-            <mat-list-item>
-                <mat-icon mat-list-icon>person</mat-icon>
-                <span *ngIf="isOpened" class="menu-item">{{appSettings.lg.employee}}</span>
-            </mat-list-item>
+            <a mat-list-item class="menu-item" [routerLink]="['/user']">
+                <button mat-icon-button matListItemIcon>
+                    <mat-icon>person</mat-icon>
+                </button>
+                <span *ngIf="isOpened" matListItemLine>{{appSettings.lg.employee}}</span>
+            </a>
 
-            <mat-list-item>
-                <mat-icon mat-list-icon>dashboard</mat-icon>
-                <span *ngIf="isOpened" class="menu-item">{{appSettings.lg.dashboard}}</span>
-            </mat-list-item>
-        </mat-nav-list>
+            <a mat-list-item class="menu-item">
+                <button mat-icon-button matListItemIcon>
+                    <mat-icon>dashboard</mat-icon>
+                </button>
+                <span *ngIf="isOpened" matListItemLine>{{appSettings.lg.dashboard}}</span>
+            </a>
+
+            <a mat-list-item class="menu-item">
+                <button mat-icon-button matListItemIcon>
+                    <mat-icon>settings</mat-icon>
+                </button>
+                <span *ngIf="isOpened" matListItemLine>{{appSettings.lg.configuration}}</span>
+            </a>
+        </mat-nav-list>        
     </mat-sidenav>
-
+    
     <mat-sidenav-content>
         <app-header></app-header>
         <router-outlet></router-outlet>
