@@ -1,12 +1,15 @@
 <mat-toolbar>
     <span class="spacer"></span>
-    <button mat-icon-button aria-label="Example icon-button with heart icon">
+    <button *ngIf="!change" mat-icon-button matTooltip="Dark Mode" (click)="changeMode()">
         <mat-icon>dark_mode</mat-icon>
     </button>
-    <button mat-icon-button aria-label="Example icon-button with heart icon">
+    <button *ngIf="change" mat-icon-button matTooltip="Light Mode" (click)="changeMode()">
+        <mat-icon>light_mode</mat-icon>
+    </button>
+    <button mat-icon-button>
         <mat-icon>account_circle</mat-icon>
     </button>
-    <button mat-icon-button aria-label="Example icon-button with heart icon">
+    <button mat-icon-button>
         <mat-icon>logout</mat-icon>
     </button>
 </mat-toolbar>

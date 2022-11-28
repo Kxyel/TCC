@@ -1,1 +1,12 @@
 @import '../../../assets/styles/scss/flex.scss';
+@import '../../../assets/styles/scss/variables.scss';
+
+mat-toolbar {
+    background-color: $primary-color;
+    box-shadow: 0px 7px 13px 5px rgba(0,0,0,0.3);
+
+    button {
+        background-color: $secondary-color;
+        color: $darkColor
+    }
+}
